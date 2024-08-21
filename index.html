@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DFM Engineering - 3D Model Generator</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <h1>Configurator</h1>
+    <div>
+        <button onclick="showTab('box')">Generate 3D Box</button>
+        <button onclick="showTab('pipeline')">Generate 3D Pipeline</button>
+        <button onclick="showTab('staircase')">Generate 3D Staircase</button>
+    </div>
+    <div id="box" class="tabcontent">
+        <h2>Generate 3D Box</h2>
+        <form id="boxForm">
+            <label for="length">Length:</label>
+            <input type="number" id="length" name="length">
+            <label for="width">Width:</label>
+            <input type="number" id="width" name="width">
+            <label for="height">Height:</label>
+            <input type="number" id="height" name="height">
+            <label for="material">Material:</label>
+            <select id="material" name="material">
+                <option value="metal">Metal</option>
+                <option value="plastic">Plastic</option>
+            </select>
+            <label for="color">Color:</label>
+            <select id="color" name="color">
+                <option value="#FF0000">Red</option>
+                <option value="#00FF00">Green</option>
+                <option value="#0000FF">Blue</option>
+            </select>
+            <button type="submit">Generate Box</button>
+        </form>
+        <div id="boxCanvasContainer" class="canvas-container"></div>
+    </div>
+
+    <div id="pipeline" class="tabcontent">
+        <h2>Generate 3D Pipeline</h2>
+        <form id="pipelineForm">
+            <label for="pipeline_length">Length:</label>
+            <input type="number" id="pipeline_length" name="pipeline_length">
+            <label for="pipeline_diameter">Diameter:</label>
+            <input type="number" id="pipeline_diameter" name="pipeline_diameter">
+            <label for="pipeline_thickness">Thickness:</label>
+            <input type="number" id="pipeline_thickness" name="pipeline_thickness">
+            <button type="submit">Generate Pipeline</button>
+        </form>
+        <div id="pipelineCanvasContainer" class="canvas-container"></div>
+    </div>
+
+    <div id="staircase" class="tabcontent">
+        <h2>Generate 3D Staircase</h2>
+        <form id="staircaseForm">
+            <label for="num_steps">Number of Steps:</label>
+            <input type="number" id="num_steps" name="num_steps">
+            <label for="step_length">Step Length:</label>
+            <input type="number" id="step_length" name="step_length">
+            <label for="step_width">Step Width:</label>
+            <input type="number" id="step_width" name="step_width">
+            <label for="step_height">Step Height:</label>
+            <input type="number" id="step_height" name="step_height">
+            <button type="submit">Generate Staircase</button>
+        </form>
+        <div id="staircaseCanvasContainer" class="canvas-container"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.rawgit.com/mrdoob/three.js/r128/examples/js/loaders/STLLoader.js"></script>
+    <script src="https://cdn.rawgit.com/mrdoob/three.js/r128/examples/js/controls/OrbitControls.js"></script>
+    <script src="/static/app.js"></script>
+</body>
+</html>
+
